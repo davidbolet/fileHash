@@ -14,9 +14,11 @@ public class SHAExample {
 			file = new File(args[0]);
 			if(!file.exists()) {
 				System.out.println("The file doesn't exist");
+				return;
 			}
 		}else {
 			System.out.println("The file name is incorrect");
+			return;
 		}
 		//Use SHA-1 algorithm
 		MessageDigest shaDigest = MessageDigest.getInstance("SHA-256");
