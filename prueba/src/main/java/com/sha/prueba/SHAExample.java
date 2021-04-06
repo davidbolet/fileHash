@@ -10,15 +10,14 @@ public class SHAExample {
 	public static void main(String[] args) throws IOException, NoSuchAlgorithmException {
 		//Create checksum for this file
 		File file = null;
-		if(args[1].length()>1) {
-			file = new File(args[1]);
+		if(args[0].length()>1) {
+			file = new File(args[0]);
 			if(!file.exists()) {
 				System.out.println("The file doesn't exist");
 			}
 		}else {
 			System.out.println("The file name is incorrect");
 		}
-		
 		//Use SHA-1 algorithm
 		MessageDigest shaDigest = MessageDigest.getInstance("SHA-256");
 		 
@@ -39,7 +38,7 @@ public class SHAExample {
 		while ((bytesCount = fis.read(byteArray)) != -1) {
 			digest.update(byteArray, 0, bytesCount);
 		}
-		;
+		
 
 		// close the stream; We don't need it now.
 		fis.close();
